@@ -120,13 +120,13 @@ export default function Home ()
 
           <div className="mobile switchBox">
             <p
-              className={`switch ${ systemUsed == "metric" ? "textGradient" : "black" }`}
+              className={`switch ${ systemUsed == "metric" ? "textGradient" : "black" } noSelect`}
               onClick={changeSystem}
             >
               °C
             </p>
             <p
-              className={`switch ${ systemUsed == "metric" ? "black" : "textGradient" }`}
+              className={`switch  noSelect ${ systemUsed == "metric" ? "black" : "textGradient" }`}
               onClick={changeSystem}
             >
               °F
@@ -175,13 +175,13 @@ export default function Home ()
           <Metrics data={weatherData} systemUsed={systemUsed} />
           <div className="desktop switchBox">
             <p
-              className={`switch ${ systemUsed == "metric" ? "textGradient" : "black" }`}
+              className={`switch noSelect ${ systemUsed == "metric" ? "textGradient" : "black" }`}
               onClick={changeSystem}
             >
               °C
             </p>
             <p
-              className={`switch ${ systemUsed == "metric" ? "black" : "textGradient" }`}
+              className={`switch noSelect ${ systemUsed == "metric" ? "black" : "textGradient" }`}
               onClick={changeSystem}
             >
               °F
