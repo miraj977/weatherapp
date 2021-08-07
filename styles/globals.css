@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Varela Round", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerx.dark {
+  background: #000; /* fallback for old browsers */
+  color: #fff !important;
+}
+
+.containerx {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(223, 234, 247, 1) 11.2%,
+    rgba(244, 248, 252, 1) 91.1%
+  );
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  margin-inline: 0;
+}
+
+@media only screen and (max-width: 950px) {
+  html,
+  body {
+    display: block;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(83, 89, 179, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 20px;
+}
+.dark .wrapper {
+  background: #202a38;
+}
+
+.wrapperHide {
+  display: none;
+}
+
+.weatherWrapper {
+  padding: 30px;
+}
+
+.locationTitle {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.weatherDescription {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.statsWrapper {
+  background-color: rgb(247, 247, 247);
+  padding: 30px;
+  text-align: right;
+  border-radius: 0 30px 30px 0;
+}
+
+.dark .statsWrapper {
+  background-color: #374151;
+}
+
+.titleAndSearch {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.statsBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.statsCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.dark .statsCard {
+  background: #1f2937;
+}
+
+.statsCardContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mainTemp {
+  font-size: 84px;
+}
+
+.searchInput {
+  margin-block: 40px;
+  height: 40px;
+  border: none;
+  padding: 0 15px;
+  color: #303030;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 10px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  max-width: 1200px;
+  margin-inline: auto;
+  width: 100%;
+  background: #fff;
+}
+
+.dark .searchInput {
+  background: black;
+  border-bottom: 2px solid white;
+  border-radius: 0px;
+  color: #fff;
+}
+
+.switchBox {
+  position: absolute;
+  bottom: 20px;
+}
+
+.switch {
+  margin: 0 5px;
+  cursor: pointer;
+  display: inline;
+}
+.black {
+  font-size: 24px;
+  font-weight: 500;
+  color: #565454;
+}
+.dark .black {
+  color: rgb(247, 247, 247);
+}
+
+.textGradient {
+  background: linear-gradient(90deg, #9411ff 0%, #0cfdc5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.errScr {
+  text-align: center;
+  height: 100vh;
+  max-width: 300px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.errSearchInput {
+  max-width: 100%;
+}
+@media only screen and (min-width: 950px) and (max-width: 1200px) {
+  .searchInput {
+    max-width: 97%;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .searchInput {
+    max-width: 600px;
+  }
+
+  .statsWrapper {
+    border-radius: 0;
+  }
+  .searchInput {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .containerx {
+    padding-top: 30px;
+  }
+  .wrapper {
+    margin: 0 auto;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+
+  .statsBox {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toggleTheme {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .titleAndSearch {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .statsBox {
+    grid-template-columns: 1fr;
+  }
+
+  .statsCardContent {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .switchBox {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .switchBox {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
