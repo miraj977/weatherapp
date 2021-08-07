@@ -258,13 +258,14 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .wrapper {
+  .wrapper,
+  .statsWrapper {
     margin: 0 auto;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
   }
 
   .statsBox {
