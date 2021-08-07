@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const MetricCard = ({ title, iconSrc, metric, unit = "", styles }) => {
+const MetricCard = ({ title, iconSrc, metric, unit = "" }) => {
   return (
     <div className="statsCard">
       <p className="font-bold">{title}</p>

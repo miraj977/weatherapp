@@ -65,7 +65,7 @@ export default function Home ()
 
       <button onClick={() => setDark( !dark )} className="absolute top-5 right-0 z-10">
         <img alt="toggleTheme" src={toggleIcon} height="80px" width="80px" className="toggleTheme" />
-        <p className="absolute whitespace-nowrap right-2 mt-1 font-bold text-xs w-16 text-center">{dark ? 'Turn on' : 'Light'}</p>
+        <p className="absolute whitespace-nowrap right-2 mt-1 font-bold text-xs w-16 sm:w-20 text-center sm:text-left">{dark ? 'Turn on' : 'Light'}</p>
       </button>
 
       <input
