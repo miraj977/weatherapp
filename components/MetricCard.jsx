@@ -8,7 +8,7 @@ const MetricCard = ({ title, iconSrc, metric, unit = "", styles }) => {
       <div className="statsCardContent">
         <Image alt="weatherIcon" src={iconSrc} height="100px" width="100px" />
         <div>
-          <p>{metric}</p>
+          <p className="text-3xl font-bold">{metric}</p>
           <p className="text-sm font-light">{unit}</p>
         </div>
       </div>

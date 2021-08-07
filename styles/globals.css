@@ -11,7 +11,7 @@
 
 html,
 body {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Varela Round", sans-serif !important;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -35,10 +35,26 @@ body {
   margin-inline: 0;
 }
 
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
 @media only screen and (max-width: 950px) {
   html,
   body {
     display: block;
+  }
+  .mobile {
+    display: block !important;
+    right: 20px;
+  }
+
+  .desktop {
+    display: none !important;
   }
 }
 
@@ -64,6 +80,7 @@ body {
 
 .weatherWrapper {
   padding: 30px;
+  position: relative;
 }
 
 .locationTitle {
@@ -89,7 +106,7 @@ body {
 
 .titleAndSearch {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -118,23 +135,45 @@ body {
 
 .mainTemp {
   font-size: 84px;
+  font-weight: bold;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .mainTemp {
+    font-size: 54px;
+  }
+  .weatherWrapper {
+    padding-block: 50px;
+  }
 }
 
 .searchInput {
   margin-bottom: 40px;
-  height: 40px;
+  height: 50px;
   border: none;
   padding: 0 15px;
   color: #303030;
   font-size: 20px;
   text-align: left;
-  border-radius: 10px;
+  border-radius: 12px;
   font-family: "Varela Round", sans-serif;
   font-size: 18px;
   max-width: 1200px;
   margin-inline: auto;
   width: 100%;
   background: #fff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 
 .dark .searchInput {
@@ -172,6 +211,13 @@ body {
   font-weight: 900;
 }
 
+.mobile .textGradient {
+  font-size: 32px;
+}
+.mobile .black {
+  font-size: 20px;
+}
+
 .errScr {
   text-align: center;
   height: 100vh;
@@ -196,23 +242,22 @@ body {
     grid-template-columns: 1fr;
     max-width: 600px;
     margin: 20px auto;
+    margin-bottom: 100px;
   }
   .searchInput {
     max-width: 600px;
   }
 
   .statsWrapper {
-    border-radius: 0;
-  }
-  .searchInput {
-    margin-top: 80px;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-border-radius: 0px 0px 20px 20px;
+    -moz-border-radius: 0px 0px 20px 20px;
+    -ms-border-radius: 0px 0px 20px 20px;
+    -o-border-radius: 0px 0px 20px 20px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .containerx {
-    padding-top: 30px;
-  }
   .wrapper {
     margin: 0 auto;
     border-radius: 12px;

@@ -57,20 +57,20 @@ export default function Home ()
   const toggleIcon = `${ dark ? '/lantern-light.png' : '/lantern.png' }`
 
   return weatherData && !weatherData.message ? (
-    <div className={`flex flex-col justify-center items-center px-5 containerx ${ dark ? 'dark' : '' }`}>
+    <div className={`flex flex-col justify-center items-center px-0 sm:px-5 containerx ${ dark ? 'dark' : '' }`}>
 
       <Head>
         <title>Weather App</title>
       </Head>
 
-      <button onClick={() => setDark( !dark )} className="absolute top-5 right-0">
+      <button onClick={() => setDark( !dark )} className="absolute top-5 right-0 z-10">
         <img alt="toggleTheme" src={toggleIcon} height="80px" width="80px" className="toggleTheme" />
         <p className="absolute whitespace-nowrap right-2 font-bold text-sm">Toggle Theme</p>
       </button>
 
       <input
         type="text"
-        className={`focus:outline-none searchInput `}
+        className="focus:outline-none searchInput desktop"
         placeholder="Search a city..."
         value={input}
         onFocus={( e ) =>
@@ -88,7 +88,7 @@ export default function Home ()
       />
       <div className={`wrapper ${ dark ? 'dark' : '' }`}>
 
-        <div className="weatherWrapper">
+        <div className="weatherWrapper px-5 sm:px-0">
 
           <h1 className="locationTitle">
             {weatherData.name}, {weatherData.sys.country}
@@ -117,11 +117,26 @@ export default function Home ()
               : Math.round( ctoF( weatherData.main.feels_like ) )}
             °{systemUsed == "metric" ? "C" : "F"}
           </p>
+
+          <div className="mobile switchBox">
+            <p
+              className={`switch ${ systemUsed == "metric" ? "textGradient" : "black" }`}
+              onClick={changeSystem}
+            >
+              °C
+            </p>
+            <p
+              className={`switch ${ systemUsed == "metric" ? "black" : "textGradient" }`}
+              onClick={changeSystem}
+            >
+              °F
+            </p>
+          </div>
         </div>
 
-        <div className="statsWrapper">
-          <div className="titleAndSearch">
-            <h2 className="font-bold text-2xl mb-5" style={{ textAlign: "left" }}>
+        <div className="statsWrapper relative">
+          <div className="titleAndSearch text-center sm:text-left">
+            <h2 className="font-bold text-2xl mb-5 mt-8 sm:mt-5 block w-full">
               {
                 weekday[
                 new Date(
@@ -136,12 +151,29 @@ export default function Home ()
               :00{" "}
               {isPM( convertTime( weatherData.dt, weatherData.timezone )[ 0 ] )}
             </h2>
-
-
           </div>
 
+          <input
+            type="text"
+            className="focus:outline-none searchInput mobile w-full text-right"
+            placeholder="Search a city..."
+            value={input}
+            onFocus={( e ) =>
+            {
+              e.target.value = "";
+              e.target.placeholder = "";
+            }}
+            onChange={( e ) => { setInput( e.target.value ) }}
+            onBlur={( e ) => { e.target.placeholder = "Search a city..."; }}
+            onKeyDown={( e ) =>
+            {
+              enterKeydown( e );
+              e.target.placeholder = "Search a city...";
+            }}
+          />
+
           <Metrics data={weatherData} systemUsed={systemUsed} />
-          <div className="switchBox">
+          <div className="desktop switchBox">
             <p
               className={`switch ${ systemUsed == "metric" ? "textGradient" : "black" }`}
               onClick={changeSystem}
@@ -174,7 +206,7 @@ export default function Home ()
     </div>
   ) : (
     <div className="errScr">
-      <img src="/loading.svg" />
+      <img src="/loader.svg" />
     </div>
   );
 }
