@@ -177,8 +177,8 @@ body {
 }
 
 .dark .searchInput {
-  background: black;
-  border-bottom: 2px solid white;
+  background: transparent;
+  border-bottom: 2px solid rgb(252, 182, 4);
   border-radius: 0px;
   color: #fff;
 }
