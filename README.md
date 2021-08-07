@@ -2,22 +2,6 @@
 
 Check the current weather on any city on the planet. Switch between metric and imperial units.
 
-![Alt img](https://images.ctfassets.net/zlsyc9paq6sa/3uBrJ07WSM40FpolgjInHY/7d886cb4187b52194bf9b63c183a1d3a/1627637330_x.gif)
-
-## Features
-
-1. Search cities functionality
-
-2. Metric vs Imperial system
-
-3. Current local time and date
-
-4. Temperatures and humidity
-
-5. Wind speed and direction
-
-6. Sunrise and sunset times
-
 ## Installation
 
 1. `git clone https://github.com/madzadev/weather-app.git`
@@ -35,11 +19,3 @@ Check the current weather on any city on the planet. Switch between metric and i
 7. Paste API key for `OPENWEATHER_API_KEY`
 
 8. `npm run dev`
-
-## Contributions
-
-Any feature requests and pull requests are welcome!
-
-## License
-
-The project is under [MIT license](https://choosealicense.com/licenses/mit/).
